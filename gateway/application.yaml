@@ -29,8 +29,8 @@ spring:
             scope: openid
         provider:
           keycloak:
-            issuer-uri: ${keycloak.urls.auth}/realms/{keycloak.realm}
-  # cloud:
+            issuer-uri: ${keycloak.urls.auth}/realms/magree
+            # cloud:
   #   gateway:
   #     routes:
   #       - id: system-service
