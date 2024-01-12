@@ -11,6 +11,11 @@ keycloak:
 
 # Auth server and gateway configuration
 spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017
+      database: system-service
+      auto-index-creation: true
   output:
     ansi:
       enabled: ALWAYS
