@@ -51,6 +51,19 @@ jwt:
     converter:
       resource-id: system-service
 
+# OTP configuration
+otp:
+  otpLength: 6
+  otpValidityInSeconds: 300
+  otpEncryption: false
+  transaction:
+    codeLength : 12
+
+
+# Kafka Configuration
+kakfa:
+  url: localhost:9092
+
 # Micrometer configuration
 management:
   endpoints:
