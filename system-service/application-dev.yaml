@@ -59,9 +59,8 @@ otp:
   transaction:
     codeLength : 12
 
-
 # Kafka Configuration
-kakfa:
+kafka:
   url: localhost:9092
 
 # Micrometer configuration
