@@ -4,7 +4,7 @@ server:
 # Logging configuration
 logging:
   level:
-    root: TRACE
+    root: INFO
     
 # keycloak configuration
 keycloak:
