@@ -1,6 +1,11 @@
 server:
   port: ${SERVER_PORT:8083}
 
+# Logging configuration
+logging:
+  level:
+    root: TRACE
+    
 # keycloak configuration
 keycloak:
   realm: ${KEYCLOAK_REALM:magree}
