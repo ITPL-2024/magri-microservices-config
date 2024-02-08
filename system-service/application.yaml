@@ -5,7 +5,7 @@ server:
 keycloak:
   realm: ${KEYCLOAK_REALM:magri}
   clientId: ${KEYCLOAK_CLIENT_ID:system-service}
-  clientSecret: ${KEYCLOAK_CLIENT_SECRET:21dNVsaM3Tp2MLH17ILswmz9AzgnjR5H}
+  clientSecret: ${KEYCLOAK_CLIENT_SECRET:Z7ChZtUOowDu2TTf2dYCQKUjiK6zNbKb}
   urls:
     auth: ${KEYCLOAK_DOMAIN:http://136.232.113.214:8080}
 
@@ -47,6 +47,18 @@ jwt:
     converter:
       resource-id: system-service
 
+# Kafka Configuration
+kafka:
+  url: localhost:9092
+
+# OTP configuration
+otp:
+  otpLength: 6
+  otpValidityInSeconds: 300
+  otpEncryption: false
+  transaction:
+    codeLength : 12
+
 # Micrometer configuration
 management:
   endpoints:
@@ -64,24 +76,3 @@ management:
   tracing:
     sampling:
       probability: 1.0
-#  metrics:
-#    export:
-#      - type: zipkin
-#        uri: http://zipkin:9411/api/v2/spans
-#        step: 10s
-#        batch: true
-#
-## Zipkin configuration
-#zipkin:
-#  sender:
-#    type: web
-#    url: http://zipkin:9411/api/v2/spans
-#
-## Brave (Zipkin instrumentation) configuration
-#brave:
-#  tracing:
-#    serviceName: 'gateway'
-#    sampler:
-#      probability: 1.0
-
-
