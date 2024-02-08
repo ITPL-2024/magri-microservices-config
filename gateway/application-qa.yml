@@ -14,7 +14,7 @@ magree:
 spring:
   data:
     mongodb:
-      uri: mongodb://192.168.1.90:27017
+      uri: mongodb://localhost:27017
       database: gateway
       auto-index-creation: true
   output:
