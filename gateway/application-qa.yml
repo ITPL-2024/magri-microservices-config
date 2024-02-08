@@ -2,9 +2,9 @@ server:
   port: ${SERVER_PORT:8085}
 
 keycloak:
-  realm: ${KEYCLOAK_REALM:magree}
+  realm: ${KEYCLOAK_REALM:magri}
   clientId: ${KEYCLOAK_CLIENT_ID:gateway}
-  clientSecret: ${KEYCLOAK_CLIENT_SECRET:wuauFDJpRxlNJUlUNjNgDzr7nGYEgnMX}
+  clientSecret: ${KEYCLOAK_CLIENT_SECRET:http://192.168.1.90:8085}
   urls:
     auth: ${KEYCLOAK_DOMAIN:http://192.168.1.90:8080}
 
