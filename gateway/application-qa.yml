@@ -12,6 +12,11 @@ magree:
   system-service : SYSTEM-SERVICE
 
 spring:
+  data:
+      mongodb:
+        uri: mongodb://localhost:27017
+        database: gateway
+        auto-index-creation: true
   output:
     ansi:
       enabled: ALWAYS
