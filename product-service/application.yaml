@@ -3,11 +3,11 @@ server:
 
 # keycloak configuration
 keycloak:
-  realm: ${KEYCLOAK_REALM:magree}
+  realm: ${KEYCLOAK_REALM:magri}
   clientId: ${KEYCLOAK_CLIENT_ID:product-service}
-  clientSecret: ${KEYCLOAK_CLIENT_SECRET:scXlYbiGjfzxNKfVWw4aulk6sfaRIrJm}
+  clientSecret: ${KEYCLOAK_CLIENT_SECRET:4ziYrT8Ke8f1Fd7qCEZxjbxZBWmmfNYQ}
   urls:
-    auth: ${KEYCLOAK_DOMAIN:http://localhost:8080}
+    auth: ${KEYCLOAK_DOMAIN:http://136.232.113.214:8080}
 
 # Auth server and gateway configuration
 spring:
