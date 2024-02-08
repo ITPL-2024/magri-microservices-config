@@ -14,7 +14,7 @@ magree:
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017
+      uri: mongodb+srv://iwant:iwant@iwant-cluster.xc2j1v4.mongodb.net/
       database: gateway
       auto-index-creation: true
   output:
@@ -35,21 +35,6 @@ spring:
         provider:
           keycloak:
             issuer-uri: ${keycloak.urls.auth}/realms/{keycloak.realm}
-  # cloud:
-  #   gateway:
-  #     routes:
-  #       - id: system-service
-  #         uri: lb://${magree.system-service}/
-  #         predicates:
-  #           - Path=/system-service/**
-  #     discovery:
-  #       locator:
-  #         enabled: true
-#          filters:
-#      default-filters:
-#        - TokenRelay
-#            - AddRequestHeader=X-Tenant,acme
-#            - AddResponseHeader=X-Genre,fantasy
 
 eureka:
   instance:
