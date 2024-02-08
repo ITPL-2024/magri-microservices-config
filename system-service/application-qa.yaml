@@ -3,9 +3,9 @@ server:
 
 # keycloak configuration
 keycloak:
-  realm: ${KEYCLOAK_REALM:magree}
+  realm: ${KEYCLOAK_REALM:magri}
   clientId: ${KEYCLOAK_CLIENT_ID:system-service}
-  clientSecret: ${KEYCLOAK_CLIENT_SECRET:8Lsp0X6kln6rGAHYz6jIlbJusu9BTXW5}
+  clientSecret: ${KEYCLOAK_CLIENT_SECRET:21dNVsaM3Tp2MLH17ILswmz9AzgnjR5H}
   urls:
     auth: ${KEYCLOAK_DOMAIN:http://192.168.1.90:8080}
 
