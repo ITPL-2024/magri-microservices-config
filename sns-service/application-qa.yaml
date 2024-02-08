@@ -8,9 +8,9 @@ logging:
     
 # keycloak configuration
 keycloak:
-  realm: ${KEYCLOAK_REALM:magree}
+  realm: ${KEYCLOAK_REALM:magri}
   clientId: ${KEYCLOAK_CLIENT_ID:sns-service}
-  clientSecret: ${KEYCLOAK_CLIENT_SECRET:cGtmGDYZo225K17BMdPJyHrRUKIO1j1f}
+  clientSecret: ${KEYCLOAK_CLIENT_SECRET:ueXiBRL80spON9pkODVvIPYFVExXdYEm}
   urls:
     auth: ${KEYCLOAK_DOMAIN:http://192.168.1.90:8080}
 
