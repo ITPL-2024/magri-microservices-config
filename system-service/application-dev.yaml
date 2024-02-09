@@ -5,7 +5,7 @@ server:
 keycloak:
   realm: ${KEYCLOAK_REALM:magri}
   clientId: ${KEYCLOAK_CLIENT_ID:system-service}
-  clientSecret: ${KEYCLOAK_CLIENT_SECRET:8Lsp0X6kln6rGAHYz6jIlbJusu9BTXW5}
+  clientSecret: ${KEYCLOAK_CLIENT_SECRET:AM00StSE85ZfVdfH8mGTLiva7hD1ADqe}
   urls:
     auth: ${KEYCLOAK_DOMAIN:http://keycloak:8080}
 
