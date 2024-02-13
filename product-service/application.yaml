@@ -5,12 +5,17 @@ server:
 keycloak:
   realm: ${KEYCLOAK_REALM:magri}
   clientId: ${KEYCLOAK_CLIENT_ID:product-service}
-  clientSecret: ${KEYCLOAK_CLIENT_SECRET:4ziYrT8Ke8f1Fd7qCEZxjbxZBWmmfNYQ}
+  clientSecret: ${KEYCLOAK_CLIENT_SECRET:96ekrvp1NmgtzDDADbJ3wZujrET2KuxK}
   urls:
-    auth: ${KEYCLOAK_DOMAIN:http://136.232.113.214:8080}
+    auth: ${KEYCLOAK_DOMAIN:http://192.168.1.90:8080}
 
 # Auth server and gateway configuration
 spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://iwant:iwant@iwant-cluster.xc2j1v4.mongodb.net/
+      database: product-service
+      auto-index-creation: true
   output:
     ansi:
       enabled: ALWAYS
@@ -34,17 +39,20 @@ spring:
 eureka:
   instance:
     hostname: ${EUREKA_SERVER_HOSTNAME:localhost}
-  port: ${EUREKA_SERVER_PORT:8761}
   client:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${eureka.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
 
 jwt:
   auth:
     converter:
       resource-id: product-service
+
+# Kafka Configuration
+kafka:
+  url: localhost:9092
 
 # Micrometer configuration
 management:
