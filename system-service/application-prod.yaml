@@ -1,16 +1,21 @@
 server:
   port: ${SERVER_PORT:8082}
-  
+
 # keycloak configuration
 keycloak:
   realm: ${KEYCLOAK_REALM:magri}
   clientId: ${KEYCLOAK_CLIENT_ID:system-service}
-  clientSecret: ${KEYCLOAK_CLIENT_SECRET:21dNVsaM3Tp2MLH17ILswmz9AzgnjR5H}
+  clientSecret: ${KEYCLOAK_CLIENT_SECRET:4CoHVVttHY533yBSCGM2dxUoU6RhQUZs}
   urls:
-    auth: ${KEYCLOAK_DOMAIN:http://136.232.113.214:8080}
-    
+    auth: ${KEYCLOAK_DOMAIN:http://192.168.1.90:8080}
+
 # Auth server and gateway configuration
 spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://iwant:iwant@iwant-cluster.xc2j1v4.mongodb.net/
+      database: system-service
+      auto-index-creation: true
   output:
     ansi:
       enabled: ALWAYS
@@ -33,18 +38,29 @@ spring:
 # Eureka Configuration
 eureka:
   instance:
-    hostname: ${EUREKA_SERVER_HOSTNAME:localhost}
-  port: ${EUREKA_SERVER_PORT:8761}
+    hostname: ${EUREKA_SERVER_HOSTNAME:service-registry}
   client:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${eureka.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
 
 jwt:
   auth:
     converter:
       resource-id: system-service
+
+# OTP configuration
+otp:
+  otpLength: 6
+  otpValidityInSeconds: 300
+  otpEncryption: false
+  transaction:
+    codeLength : 12
+
+# Kafka Configuration
+kafka:
+  url: kafka:9092
 
 # Micrometer configuration
 management:
@@ -59,26 +75,7 @@ management:
       show-details: always
   zipkin:
     tracing:
-      endpoint: http://localhost:9411/api/v2/spans
+      endpoint: http://zipkin:9411/api/v2/spans
   tracing:
     sampling:
       probability: 1.0
-#  metrics:
-#    export:
-#      - type: zipkin
-#        uri: http://zipkin:9411/api/v2/spans
-#        step: 10s
-#        batch: true
-#
-## Zipkin configuration
-#zipkin:
-#  sender:
-#    type: web
-#    url: http://zipkin:9411/api/v2/spans
-#
-## Brave (Zipkin instrumentation) configuration
-#brave:
-#  tracing:
-#    serviceName: 'gateway'
-#    sampler:
-#      probability: 1.0
