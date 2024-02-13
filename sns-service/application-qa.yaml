@@ -10,9 +10,9 @@ logging:
 keycloak:
   realm: ${KEYCLOAK_REALM:magri}
   clientId: ${KEYCLOAK_CLIENT_ID:sns-service}
-  clientSecret: ${KEYCLOAK_CLIENT_SECRET:ueXiBRL80spON9pkODVvIPYFVExXdYEm}
+  clientSecret: ${KEYCLOAK_CLIENT_SECRET:XJdBSLO37vIxLvNbdAOzHYppgmSYXsRj}
   urls:
-    auth: ${KEYCLOAK_DOMAIN:http://136.232.113.214:8080}
+    auth: ${KEYCLOAK_DOMAIN:http://192.168.1.90:8080}
 
 # Auth server and gateway configuration
 spring:
@@ -43,13 +43,12 @@ spring:
 # Eureka Configuration
 eureka:
   instance:
-    hostname: ${EUREKA_SERVER_HOSTNAME:192.168.1.90}
-  port: ${EUREKA_SERVER_PORT:8761}
+    hostname: ${EUREKA_SERVER_HOSTNAME:service-registry}
   client:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${eureka.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
 
 jwt:
   auth:
@@ -58,7 +57,7 @@ jwt:
 
 # Kafka Configuration
 kafka:
-  url: 192.168.1.90:9092
+  url: kafka:9092
 
 # Micrometer configuration
 management:
@@ -73,7 +72,7 @@ management:
       show-details: always
   zipkin:
     tracing:
-      endpoint: http://192.168.1.90:9411/api/v2/spans
+      endpoint: http://zipkin:9411/api/v2/spans
   tracing:
     sampling:
       probability: 1.0
