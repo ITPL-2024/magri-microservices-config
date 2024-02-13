@@ -10,15 +10,15 @@ logging:
 keycloak:
   realm: ${KEYCLOAK_REALM:magri}
   clientId: ${KEYCLOAK_CLIENT_ID:sns-service}
-  clientSecret: ${KEYCLOAK_CLIENT_SECRET:ueXiBRL80spON9pkODVvIPYFVExXdYEm}
+  clientSecret: ${KEYCLOAK_CLIENT_SECRET:XJdBSLO37vIxLvNbdAOzHYppgmSYXsRj}
   urls:
-    auth: ${KEYCLOAK_DOMAIN:http://136.232.113.214:8080}
+    auth: ${KEYCLOAK_DOMAIN:http://192.168.1.90:8080}
 
 # Auth server and gateway configuration
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017
+      uri: mongodb+srv://iwant:iwant@iwant-cluster.xc2j1v4.mongodb.net/
       database: sns-service
       auto-index-creation: true
   output:
@@ -44,12 +44,11 @@ spring:
 eureka:
   instance:
     hostname: ${EUREKA_SERVER_HOSTNAME:localhost}
-  port: ${EUREKA_SERVER_PORT:8761}
   client:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${eureka.port}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
 
 jwt:
   auth:
@@ -77,22 +76,3 @@ management:
   tracing:
     sampling:
       probability: 1.0
-#  metrics:
-#    export:
-#      - type: zipkin
-#        uri: http://zipkin:9411/api/v2/spans
-#        step: 10s
-#        batch: true
-#
-## Zipkin configuration
-#zipkin:
-#  sender:
-#    type: web
-#    url: http://zipkin:9411/api/v2/spans
-#
-## Brave (Zipkin instrumentation) configuration
-#brave:
-#  tracing:
-#    serviceName: 'gateway'
-#    sampler:
-#      probability: 1.0
