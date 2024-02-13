@@ -52,7 +52,7 @@ jwt:
 
 # OTP configuration
 otp:
-  otpLength: 6
+  otpLength: 4
   otpValidityInSeconds: 300
   otpEncryption: false
   transaction:
