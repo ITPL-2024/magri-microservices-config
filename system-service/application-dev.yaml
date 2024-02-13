@@ -38,7 +38,7 @@ spring:
 # Eureka Configuration
 eureka:
   instance:
-    hostname: ${EUREKA_SERVER_HOSTNAME:service-registry}
+    hostname: ${EUREKA_SERVER_HOSTNAME:localhost}
   client:
     register-with-eureka: true
     fetch-registry: true
@@ -60,7 +60,7 @@ otp:
 
 # Kafka Configuration
 kafka:
-  url: kafka:9092
+  url: localhost:9092
 
 # Micrometer configuration
 management:
@@ -75,7 +75,7 @@ management:
       show-details: always
   zipkin:
     tracing:
-      endpoint: http://zipkin:9411/api/v2/spans
+      endpoint: http://localhost:9411/api/v2/spans
   tracing:
     sampling:
       probability: 1.0
