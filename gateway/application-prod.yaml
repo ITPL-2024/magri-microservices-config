@@ -2,16 +2,21 @@ server:
   port: ${SERVER_PORT:8085}
 
 keycloak:
-  realm: ${KEYCLOAK_REALM:magree}
+  realm: ${KEYCLOAK_REALM:magri}
   clientId: ${KEYCLOAK_CLIENT_ID:gateway}
-  clientSecret: ${KEYCLOAK_CLIENT_SECRET:wuauFDJpRxlNJUlUNjNgDzr7nGYEgnMX}
+  clientSecret: ${KEYCLOAK_CLIENT_SECRET:JRpC59Bt3FCfBMU8KybPuza4fGAxEVdG}
   urls:
-    auth: ${KEYCLOAK_DOMAIN:http://localhost:8080}
+    auth: ${KEYCLOAK_DOMAIN:http://192.168.1.90:8080}
 
 magree:
   system-service : SYSTEM-SERVICE
 
 spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://iwant:iwant@iwant-cluster.xc2j1v4.mongodb.net/
+      database: gateway
+      auto-index-creation: true
   output:
     ansi:
       enabled: ALWAYS
@@ -30,25 +35,10 @@ spring:
         provider:
           keycloak:
             issuer-uri: ${keycloak.urls.auth}/realms/{keycloak.realm}
-  cloud:
-    gateway:
-      routes:
-        - id: system-service
-          uri: lb://${magree.system-service}/
-          predicates:
-            - Path=/system-service/**
-      discovery:
-        locator:
-          enabled: true
-#          filters:
-#      default-filters:
-#        - TokenRelay
-#            - AddRequestHeader=X-Tenant,acme
-#            - AddResponseHeader=X-Genre,fantasy
 
 eureka:
   instance:
-    hostname: ${EUREKA_SERVER_HOSTNAME:localhost}
+    hostname: ${EUREKA_SERVER_HOSTNAME:service-registry}
   port: ${EUREKA_SERVER_PORT:8761}
   client:
     register-with-eureka: true
@@ -74,7 +64,7 @@ management:
       show-details: always
   zipkin:
     tracing:
-      endpoint: http://localhost:9411/api/v2/spans
+      endpoint: http://zipkin:9411/api/v2/spans
   tracing:
     sampling:
       probability: 1.0
