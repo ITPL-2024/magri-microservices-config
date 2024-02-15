@@ -34,17 +34,23 @@ spring:
             scope: openid
         provider:
           keycloak:
-            issuer-uri: ${keycloak.urls.auth}/realms/{keycloak.realm}
+            issuer-uri: ${keycloak.urls.auth}/realms/{keycloak.realm}    
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
           
-# Eureka Configuration
 eureka:
   instance:
-    hostname: ${EUREKA_SERVER_HOSTNAME:localhost}
+    hostname: ${EUREKA_SERVER_HOSTNAME:service-registry}
+    prefer-ip-address: true
+  port: ${EUREKA_SERVER_PORT:8761}
   client:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${eureka.port}/eureka/
 
 jwt:
   auth:
