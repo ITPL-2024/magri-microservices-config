@@ -35,16 +35,6 @@ spring:
         provider:
           keycloak:
             issuer-uri: ${keycloak.urls.auth}/realms/{keycloak.realm}
-  cloud:
-    gateway:
-      routes:
-        - id: system-service
-          uri: lb://${magree.system-service}/
-          predicates:
-            - Path=/system-service/**
-      discovery:
-        locator:
-          enabled: true
           
 # Eureka Configuration
 eureka:
