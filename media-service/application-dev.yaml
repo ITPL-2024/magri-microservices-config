@@ -14,7 +14,7 @@ spring:
   data:
     mongodb:
       uri: mongodb+srv://iwant:iwant@iwant-cluster.xc2j1v4.mongodb.net/
-      database: temp-media-service
+      database: media-service
       auto-index-creation: true
   output:
     ansi:
