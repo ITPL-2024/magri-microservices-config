@@ -34,6 +34,17 @@ spring:
         provider:
           keycloak:
             issuer-uri: ${keycloak.urls.auth}/realms/{keycloak.realm}
+  
+#AWS properties
+  cloud:
+    aws:
+      stack:
+        auto: false
+      region:
+        static: "eu-central-1"
+      credentials:
+        accessKey: "AKIAXSMSHJMT4K4XSZFA"
+        secretKey: "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"
 
 # Eureka Configuration
 eureka:
@@ -72,3 +83,7 @@ management:
   tracing:
     sampling:
       probability: 1.0
+      
+app:
+  awsServices:
+    bucketName : "magri-test"
