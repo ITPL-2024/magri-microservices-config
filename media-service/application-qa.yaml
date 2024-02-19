@@ -72,3 +72,18 @@ management:
   tracing:
     sampling:
       probability: 1.0
+      
+#AWS properties
+  cloud:
+    aws:
+      stack:
+        auto: false
+      region:
+        static: "eu-central-1"
+      credentials:
+        accessKey: "AKIAXSMSHJMT4K4XSZFA"
+        secretKey: "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"
+app:
+  awsServices:
+    bucketName : "magri-test"
+
