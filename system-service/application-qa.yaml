@@ -12,7 +12,7 @@ logging:
 keycloak:
   realm: ${KEYCLOAK_REALM:magri}
   clientId: ${KEYCLOAK_CLIENT_ID:system-service}
-  clientSecret: ${ secrets.SYSTEM_SERVICE_KEYCLOAK_SECRET_KEY }
+  clientSecret: ${ SYSTEM_SERVICE_KEYCLOAK_SECRET_KEY }
   urls:
     auth: ${KEYCLOAK_DOMAIN:http://192.168.1.90:8080}
 
