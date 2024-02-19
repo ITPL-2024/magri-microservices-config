@@ -86,3 +86,7 @@ product:
 sns:
   service:
     url : lb://SNS-SERVICE/
+
+media:
+  service:
+    url : lb://MEDIA-SERVICE/
