@@ -1,6 +1,13 @@
 server:
   port: ${SERVER_PORT:8084}
 
+# Logging configuration
+logging:
+  level:
+    io:
+      itpl:
+        systemservice: TRACE
+        
 # keycloak configuration
 keycloak:
   realm: ${KEYCLOAK_REALM:magri}
