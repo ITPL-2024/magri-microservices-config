@@ -51,6 +51,10 @@ jwt:
     converter:
       resource-id: content-service
 
+# Kafka Configuration
+kafka:
+  url: localhost:9092
+
 # Micrometer configuration
 management:
   endpoints:
