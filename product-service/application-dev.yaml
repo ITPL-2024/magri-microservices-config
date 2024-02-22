@@ -6,8 +6,8 @@ logging:
   level:
     io:
       itpl:
-        systemservice: TRACE
-        
+        productservice: TRACE
+
 # keycloak configuration
 keycloak:
   realm: ${KEYCLOAK_REALM:magri}
