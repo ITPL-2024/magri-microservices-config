@@ -62,10 +62,10 @@ jwt:
 kafka:
   url: kafka:9092
 
-# Circuit breaker configuration
-feign:
-  circuitbreaker:
-    enabled: true
+# # Circuit breaker configuration
+# feign:
+#   circuitbreaker:
+#     enabled: true
 
 # Micrometer configuration
 management:
