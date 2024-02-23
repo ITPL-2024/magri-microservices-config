@@ -6,8 +6,8 @@ logging:
   level:
     io:
       itpl:
-        systemservice: TRACE
-        
+        contentservice: TRACE
+
 # keycloak configuration
 keycloak:
   realm: ${KEYCLOAK_REALM:magri}
@@ -61,6 +61,11 @@ jwt:
 # Kafka Configuration
 kafka:
   url: kafka:9092
+
+# Circuit breaker configuration
+feign:
+  circuitbreaker:
+    enabled: true
 
 # Micrometer configuration
 management:
