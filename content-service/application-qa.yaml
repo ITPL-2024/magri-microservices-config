@@ -41,12 +41,12 @@ spring:
         provider:
           keycloak:
             issuer-uri: ${keycloak.urls.auth}/realms/{keycloak.realm}
-  cloud:
-    openfeign:
-      circuitbreaker:
-        enabled: true
-        alphanumeric-ids:
-          enabled: true
+  # cloud:
+  #   openfeign:
+  #     circuitbreaker:
+  #       enabled: true
+  #       alphanumeric-ids:
+  #         enabled: true
 
 # Eureka Configuration
 eureka:
