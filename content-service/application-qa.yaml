@@ -45,6 +45,8 @@ spring:
     openfeign:
       circuitbreaker:
         enabled: true
+        alphanumeric-ids:
+          enabled: true
 
 # Eureka Configuration
 eureka:
