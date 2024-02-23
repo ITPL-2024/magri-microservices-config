@@ -41,6 +41,10 @@ spring:
         provider:
           keycloak:
             issuer-uri: ${keycloak.urls.auth}/realms/{keycloak.realm}
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
 
 # Eureka Configuration
 eureka:
