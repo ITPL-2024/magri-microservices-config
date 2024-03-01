@@ -53,7 +53,7 @@ jwt:
 
 # Kafka Configuration
 kafka:
-  url: kafka:9092
+  url: localhost:9092
 
 # Micrometer configuration
 management:
