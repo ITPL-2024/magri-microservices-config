@@ -1,21 +1,6 @@
 server:
   port: ${SERVER_PORT:8082}
 
-# Logging configuration
-logging:
-  level:
-    io:
-      itpl:
-        systemservice: TRACE
-
-# keycloak configuration
-keycloak:
-  realm: ${KEYCLOAK_REALM:magri}
-  clientId: ${KEYCLOAK_CLIENT_ID:system-service}
-  clientSecret: ${KEYCLOAK_SECRET_KEY:4CoHVVttHY533yBSCGM2dxUoU6RhQUZs}
-  urls:
-    auth: ${KEYCLOAK_DOMAIN:http://192.168.1.90:8080}
-
 # Auth server and gateway configuration
 spring:
   data:
