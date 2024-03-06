@@ -1,14 +1,3 @@
-server:
-  port: ${SERVER_PORT:8086}
-
-# keycloak configuration
-keycloak:
-  realm: ${KEYCLOAK_REALM:magri}
-  clientId: ${KEYCLOAK_CLIENT_ID:media-service}
-  clientSecret: ${KEYCLOAK_CLIENT_SECRET:dFT4zzEjg1AUQiru3EacM0gC3uBig2JG}
-  urls:
-    auth: ${KEYCLOAK_DOMAIN:http://192.168.1.90:8080}
-
 # Auth server and gateway configuration
 spring:
   data:
