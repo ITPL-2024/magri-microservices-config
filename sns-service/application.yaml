@@ -4,15 +4,17 @@ server:
 # Logging configuration
 logging:
   level:
-    root: INFO
-    
+    io:
+      itpl:
+        snsservice: TRACE
+
 # keycloak configuration
 keycloak:
   realm: ${KEYCLOAK_REALM:magri}
   clientId: ${KEYCLOAK_CLIENT_ID:sns-service}
   clientSecret: ${KEYCLOAK_CLIENT_SECRET:XJdBSLO37vIxLvNbdAOzHYppgmSYXsRj}
   urls:
-    auth: ${KEYCLOAK_DOMAIN:http://192.168.1.90:8080}
+    auth: ${KEYCLOAK_DOMAIN:http://3.71.186.189:8080}
 
 # Auth server and gateway configuration
 spring:

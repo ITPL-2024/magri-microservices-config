@@ -7,7 +7,6 @@ logging:
     io:
       itpl:
         productservice: TRACE
-        commonservice: TRACE
 
 # keycloak configuration
 keycloak:
@@ -15,7 +14,7 @@ keycloak:
   clientId: ${KEYCLOAK_CLIENT_ID:product-service}
   clientSecret: ${KEYCLOAK_CLIENT_SECRET:96ekrvp1NmgtzDDADbJ3wZujrET2KuxK}
   urls:
-    auth: ${KEYCLOAK_DOMAIN:http://192.168.29.125:8080}
+    auth: ${KEYCLOAK_DOMAIN:http://3.71.186.189:8080}
     
 # Auth server and gateway configuration
 spring:
