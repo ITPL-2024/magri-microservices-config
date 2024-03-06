@@ -7,6 +7,7 @@ logging:
     io:
       itpl:
         productservice: TRACE
+        commonservice: TRACE
 
 # keycloak configuration
 keycloak:
