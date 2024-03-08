@@ -1,0 +1,63 @@
+# Auth server and gateway configuration
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://iwant:iwant@iwant-cluster.xc2j1v4.mongodb.net/
+      database: order-service
+      auto-index-creation: true
+  output:
+    ansi:
+      enabled: ALWAYS
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${keycloak.urls.auth}/realms/${keycloak.realm}
+          jwt-set-uri: ${spring.security.oauth2.resourceserver.jwt.issuer-uri}/protocol/openid-connect/certs
+      client:
+        registration:
+          keycloak:
+            client-id: ${keycloak.clientId}
+            client-secret: ${keycloak.clientSecret}
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: ${keycloak.urls.auth}/realms/{keycloak.realm}
+
+# Eureka Configuration
+eureka:
+  instance:
+    hostname: ${EUREKA_SERVER_HOSTNAME:localhost}
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+
+jwt:
+  auth:
+    converter:
+      resource-id: order-service
+
+# Kafka Configuration
+kafka:
+  url: localhost:9092
+
+# Micrometer configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    prometheus:
+      enabled: true
+    health:
+      show-details: always
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
+  tracing:
+    sampling:
+      probability: 1.0
