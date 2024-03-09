@@ -14,7 +14,7 @@ keycloak:
   clientId: ${KEYCLOAK_CLIENT_ID:system-service}
   clientSecret: ${KEYCLOAK_CLIENT_SECRET:4CoHVVttHY533yBSCGM2dxUoU6RhQUZs}
   urls:
-    auth: ${KEYCLOAK_DOMAIN:http://136.232.113.214:8080}
+    auth: ${KEYCLOAK_DOMAIN:http://3.71.186.189:8080}
 
 # Auth server and gateway configuration
 spring:
