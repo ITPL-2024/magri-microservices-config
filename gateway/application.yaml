@@ -1,6 +1,13 @@
 server:
   port: ${SERVER_PORT:8085}
 
+# Logging configuration
+logging:
+  level:
+    io:
+      itpl:
+        gateway: TRACE
+
 keycloak:
   realm: ${KEYCLOAK_REALM:magri}
   clientId: ${KEYCLOAK_CLIENT_ID:gateway}
