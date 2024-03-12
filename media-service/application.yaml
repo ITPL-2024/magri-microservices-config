@@ -6,7 +6,7 @@ logging:
   level:
     io:
       itpl:
-        systemservice: TRACE
+        mediaservice: TRACE
 
 # keycloak configuration
 keycloak:
