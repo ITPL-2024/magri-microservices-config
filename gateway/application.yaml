@@ -96,3 +96,11 @@ sns:
 media:
   service:
     url : lb://MEDIA-SERVICE/
+
+order:
+  service:
+    url : lb://ORDER-SERVICE/
+
+content:
+  service:
+    url : lb://CONTENT-SERVICE/
