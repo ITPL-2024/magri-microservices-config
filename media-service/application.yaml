@@ -47,10 +47,6 @@ spring:
       max-file-size: 50MB
       max-request-size: 50MB
       
-#      file count limit
-file-count:
-  max: 6
-  min: 0
 
 # Eureka Configuration
 eureka:
@@ -94,3 +90,10 @@ management:
   tracing:
     sampling:
       probability: 1.0
+# file upload limit
+files:
+  count:
+    max: 6
+    min: 0
+
+
