@@ -6,7 +6,7 @@ logging:
   level:
     io:
       itpl:
-        systemservice: TRACE
+        notificationservice: TRACE
 
 # keycloak configuration
 keycloak:
