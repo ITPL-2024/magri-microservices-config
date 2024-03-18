@@ -38,6 +38,7 @@ spring:
           keycloak:
             client-id: ${keycloak.clientId}
             client-secret: ${keycloak.clientSecret}
+            authorization-grant-type: client_credentials
             scope: openid
         provider:
           keycloak:
