@@ -59,11 +59,6 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${eureka.port}/eureka/
 
-jwt:
-  auth:
-    converter:
-      resource-id: gateway
-
 # Micrometer configuration
 management:
   endpoints:

@@ -41,12 +41,7 @@ eureka:
     initial-instance-info-replication-interval-seconds: 30
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
-
-jwt:
-  auth:
-    converter:
-      resource-id: media-service
-
+      
 # Kafka Configuration
 kafka:
   url: kafka:9092

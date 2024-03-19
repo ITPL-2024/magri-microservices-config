@@ -1,9 +1,28 @@
+server:
+  port: ${SERVER_PORT:9091}
+
+# Logging configuration
+logging:
+  level:
+    io:
+      itpl:
+        searchengine: TRACE
+        commonservice: TRACE
+
+# keycloak configuration
+keycloak:
+  realm: ${KEYCLOAK_REALM:magri}
+  clientId: ${KEYCLOAK_CLIENT_ID:search-engine}
+  clientSecret: ${KEYCLOAK_CLIENT_SECRET:31HPLr3gSkZgNZNwcPqGHncW2Kyb8ksM}
+  urls:
+    auth: ${KEYCLOAK_DOMAIN:http://3.71.186.189:8080}
+    
 # Auth server and gateway configuration
 spring:
   data:
     mongodb:
       uri: mongodb+srv://iwant:iwant@iwant-cluster.xc2j1v4.mongodb.net/
-      database: notification-service
+      database: search-engine
       auto-index-creation: true
   output:
     ansi:
@@ -23,12 +42,11 @@ spring:
         provider:
           keycloak:
             issuer-uri: ${keycloak.urls.auth}/realms/{keycloak.realm}
-  
 
 # Eureka Configuration
 eureka:
   instance:
-    hostname: ${EUREKA_SERVER_HOSTNAME:service-registry}
+    hostname: ${EUREKA_SERVER_HOSTNAME:localhost}
     prefer-ip-address: true
   client:
     register-with-eureka: true
@@ -40,7 +58,12 @@ eureka:
 
 # Kafka Configuration
 kafka:
-  url: kafka:9092
+  url: localhost:9092
+
+# redis configuration
+redis:
+  host: redis
+  port: 6379
 
 # Micrometer configuration
 management:
@@ -55,8 +78,7 @@ management:
       show-details: always
   zipkin:
     tracing:
-      endpoint: http://zipkin:9411/api/v2/spans
+      endpoint: http://localhost:9411/api/v2/spans
   tracing:
     sampling:
       probability: 1.0
-  

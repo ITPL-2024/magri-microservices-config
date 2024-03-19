@@ -55,10 +55,6 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
 
-jwt:
-  auth:
-    converter:
-      resource-id: sns-service
 
 # Kafka Configuration
 kafka:

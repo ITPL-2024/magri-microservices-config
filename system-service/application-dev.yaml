@@ -37,11 +37,6 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
 
-jwt:
-  auth:
-    converter:
-      resource-id: system-service
-
 # OTP configuration
 otp:
   otpLength: 6
