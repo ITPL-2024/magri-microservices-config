@@ -14,7 +14,7 @@ keycloak:
   clientId: ${KEYCLOAK_CLIENT_ID:notification-service}
   clientSecret: ${KEYCLOAK_CLIENT_SECRET:3yAnTB7thiL3ofWl8lFLwjqAZ5f2AAr5}
   urls:
-    auth: ${KEYCLOAK_DOMAIN:http://136.232.113.214:8080}
+    auth: ${KEYCLOAK_DOMAIN:http://3.71.186.189:8080}
 
 # Auth server and gateway configuration
 spring:
